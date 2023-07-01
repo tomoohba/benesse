@@ -3,11 +3,11 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ResultPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ResultPage extends StatelessWidget {
+  const ResultPage({super.key});
 
   // This widget is the root of your application.
   @override
@@ -17,19 +17,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'benesse Edtech'),
+      home: const ResultHome(title: 'benesse Edtech'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class ResultHome extends StatefulWidget {
+  const ResultHome({super.key, required this.title});
   final String title;
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ResultHome> createState() => _ResultHomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ResultHomeState extends State<ResultHome> {
   int _grade = 0;
 
   void _incrementCounter() {
