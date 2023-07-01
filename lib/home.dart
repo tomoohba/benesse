@@ -92,69 +92,39 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
-                    child: Text('英語'),
+                    child: Text(
+                      '英語',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                          Size(200, 70)), // 幅: 200, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
-                    child: Text('数学'),
+                    child: Text(
+                      '数学',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                          Size(200, 70)), // 幅: 200, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
-                    child: Text('国語'),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                    child: Text(
+                      '国語',
+                      style: TextStyle(fontSize: 20),
                     ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      // ボタンが押された時の処理
-                    },
-                    child: Text('物理'),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // ボタンが押された時の処理
-                    },
-                    child: Text('化学'),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // ボタンが押された時の処理
-                    },
-                    child: Text('生物'),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                          Size(200, 70)), // 幅: 200, 高さ: 70
                     ),
                   ),
                 ],
@@ -170,30 +140,110 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
-                    child: Text('地理'),
+                    child: Text(
+                      '物理',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                          Size(200, 70)), // 幅: 200, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
-                    child: Text('日本史'),
+                    child: Text(
+                      '化学',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                          Size(200, 70)), // 幅: 200, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
-                    child: Text('世界史'),
+                    child: Text(
+                      '生物',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 50)), // 幅: 200, 高さ: 50
+                          Size(200, 70)), // 幅: 200, 高さ: 70
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      // ボタンが押された時の処理
+                    },
+                    child: Text(
+                      '地理',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    style: ButtonStyle(
+                      fixedSize: MaterialStateProperty.all(
+                          Size(200, 70)), // 幅: 200, 高さ: 70
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // ボタンが押された時の処理
+                    },
+                    child: Text(
+                      '日本史',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    style: ButtonStyle(
+                      fixedSize: MaterialStateProperty.all(
+                          Size(200, 70)), // 幅: 200, 高さ: 70
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // ボタンが押された時の処理
+                    },
+                    child: Text(
+                      '世界史',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    style: ButtonStyle(
+                      fixedSize: MaterialStateProperty.all(
+                          Size(200, 70)), // 幅: 200, 高さ: 70
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      // ボタンが押された時の処理
+                    },
+                    child: Text(
+                      '苦手',
+                      style: TextStyle(fontSize: 25),
+                    ),
+                    style: ButtonStyle(
+                      fixedSize: MaterialStateProperty.all(Size(300, 70)),
+                      backgroundColor: MaterialStateProperty.all(
+                          Colors.red), // ボタンの背景色を青に設定 // 幅: 200, 高さ: 70
                     ),
                   ),
                 ],
