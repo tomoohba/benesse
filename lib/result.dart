@@ -1,8 +1,54 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      home: const ResultHome(),
+    );
+  }
+}
+
+class ResultHome extends StatelessWidget {
+  const ResultHome({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Benesse',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const ResultPage(),
+    );
+  }
+}
+
 class ResultPage extends StatefulWidget {
-  const ResultPage({super.key, required this.title});
-  final String title;
+  const ResultPage({
+    super.key,
+  });
   @override
   State<ResultPage> createState() => _ResultPageState();
 }
@@ -11,13 +57,13 @@ class _ResultPageState extends State<ResultPage> {
   int _grade = 0;
   int _selectedIndex = 0;
 
-  void _pushHomePage() async {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            settings: RouteSettings(name: "/home"),
-            builder: (BuildContext context) => (HomePage())));
-  }
+  // void _pushHomePage() async {
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           settings: RouteSettings(name: "/home"),
+  //           builder: (BuildContext context) => (HomePage())));
+  // }
 
   void _ontapedbottom(int index) {
     setState(() {
@@ -28,6 +74,7 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Colors.green[100],
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,10 +85,12 @@ class _ResultPageState extends State<ResultPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     const Text('今回の点数',
-                        style: TextStyle(fontSize: 35, fontFamily: 'MSゴシック')),
+                        style: TextStyle(
+                            fontSize: 50, fontFamily: 'Noto Sans JP')),
                     Text(
                       '$_grade/10',
-                      style: Theme.of(context).textTheme.headlineMedium,
+                      style:
+                          TextStyle(fontSize: 50, fontFamily: 'Noto Sans JP'),
                     ),
                   ],
                 ),
@@ -53,31 +102,33 @@ class _ResultPageState extends State<ResultPage> {
                   children: <Widget>[
                     ElevatedButton(
                       child: const Text(
-                        'HOME',
+                        'ホーム',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 30,
+                          fontSize: 40,
+                          fontFamily: "Noto Sans JP",
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(170, 100),
-                        primary: Colors.grey[300],
-                        onPrimary: Colors.purple,
+                        primary: Colors.greenAccent,
+                        onPrimary: Colors.green[900],
                       ),
-                      onPressed: _pushHomePage,
+                      onPressed: () {},
                     ),
                     ElevatedButton(
                       child: const Text(
-                        'NEXT',
+                        '次へ',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 30,
+                          fontSize: 40,
+                          fontFamily: "Noto Sans JP",
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(170, 100),
-                        primary: Colors.grey[300],
-                        onPrimary: Colors.purple,
+                        primary: Colors.greenAccent,
+                        onPrimary: Colors.green[900],
                       ),
                       onPressed: () {},
                     ),
