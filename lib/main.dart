@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         // the command line to start the app).
         //
         // Notice that the counter didn't reset back to zero; the application
+
         // state is not lost during the reload. To reset the state, use hot
         // restart instead.
         //
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         //primarySwatch: Colors.blue,
         primarySwatch: Colors.green,
         //useMaterial3: true,
+
       ),
       home: HomePage(),
        routes: <String, WidgetBuilder>{
