@@ -66,7 +66,7 @@ class _SolvedPageState extends State<SolvedPage> {
                   Container(
                     alignment: Alignment.topCenter,
                     child: Text('問題',
-                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.bold, fontSize: 30),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                   ),
                   Container(

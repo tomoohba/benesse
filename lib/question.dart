@@ -53,7 +53,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     alignment: Alignment.topCenter,
                     child: Text('問題' + '$qnum',
                       style: TextStyle(
-                        fontFamily: 'Noto Sans JP',
+                        // fontFamily: 'Noto Sans JP',
                         fontWeight: FontWeight.bold, fontSize: 30,),
                     ),
                   ),
