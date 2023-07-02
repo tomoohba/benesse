@@ -34,16 +34,6 @@ class _QuestionPageState extends State<QuestionPage> {
     MyApp.qmain.setChoice(4);
   }
 
-  // int cannot = 0; //苦手度合い
-  // int threshold = 6; //苦手閾値、この値を超えると苦手認定
-  // int difficulty = 1; // スキップ5点,簡単5点,普通3点,難しい1点, 
-  // bool isnotgood = false;
-  // void cannotsolve(){
-  //   cannot = cannot + difficulty;
-  //   if(cannot > threshold){
-  //     isnotgood = true;
-  //   }
-  // }
   String qtxt = MyApp.eng.qlist[MyApp.qmain.qnum];
   List<String> chlist =  MyApp.eng.chlist[MyApp.qmain.qnum];
   
@@ -51,11 +41,12 @@ class _QuestionPageState extends State<QuestionPage> {
   @override
   Widget build(BuildContext context) {
     int qnum  = MyApp.qmain.qnum + 1;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.green),
-       home: Scaffold(
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   title: 'Flutter Demo',
+    //   theme: ThemeData(primarySwatch: Colors.green),
+    //    home: 
+    return Scaffold(
         appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text("Question"),
@@ -166,7 +157,8 @@ class _QuestionPageState extends State<QuestionPage> {
             ),
           ],
         ),
-      ),
+      );
+
       // appBar: AppBar(
 
       //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -248,6 +240,6 @@ class _QuestionPageState extends State<QuestionPage> {
       //   tooltip: 'Increment',
       //   child: const Icon(Icons.add),
       // ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    //);
   }
 }
