@@ -26,108 +26,92 @@ class _ResultPageState extends State<ResultPage> {
     }
     MyApp.qmain.init();
 
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-          fontFamily: "Noto Sans JP",
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            title: Text("Result"),
-          ),
-          body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Container>[
-                  Container(
-                    height: 450.0,
-                    width: 400,
-                    child: Container(
-                      //color: Colors.orange[100],
-                      height: 400.0,
-                      width: 350,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          const Text("今回の点数", style: TextStyle(fontSize: 35)),
-                          Text('$cor' + "/" + '$qsize',
-                              style: TextStyle(
-                                fontSize: 40,
-                                fontFamily: "Noto Sans JP",
-                              )),
-                          Text("結果： " + '$cor' + "/" + '$qsize',
-                              style: TextStyle(
-                                fontSize: 20,
-                              )),
-                          for (int i = 0; i < difflist.length; i++)
-                            Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: "Noto Sans JP",
-                                )),
-                          for (int i = 0; i < difflist.length; i++)
-                            if (difflist[i] >= MyApp.qmain.threshold)
-                              Text(MyApp.eng.unitdesc[i],
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 20,
-                                    fontFamily: "Noto Sans JP",
-                                  )),
-                        ],
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text("Result"),
+      ),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Container>[
+              Container(
+                height: 400.0,
+                width: 400,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    const Text("今回の点数", style: TextStyle(fontSize: 35)),
+                    Text('$cor' + "/" + '$qsize',
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontFamily: "Noto Sans JP",
+                        )),
+                    for (int i = 0; i < difflist.length; i++)
+                      Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "Noto Sans JP",
+                          )),
+                    for (int i = 0; i < difflist.length; i++)
+                      if (difflist[i] >= MyApp.qmain.threshold)
+                        Text(MyApp.eng.unitdesc[i],
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 20,
+                              fontFamily: "Noto Sans JP",
+                            )),
+                  ],
+                ),
+              ),
+              Container(
+                height: 200.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    ElevatedButton(
+                      child: const Text(
+                        'ホーム',
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: 40,
+                          fontFamily: "Noto Sans JP",
+                        ),
                       ),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(170, 100),
+                        primary: Colors.greenAccent,
+                        onPrimary: Colors.green[900],
+                        elevation: 10,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/home");
+                      },
                     ),
-                  ),
-                  Container(
-                    height: 200.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        ElevatedButton(
-                          child: const Text(
-                            'ホーム',
-                            style: TextStyle(
-                              color: Colors.black45,
-                              fontSize: 40,
-                              fontFamily: "Noto Sans JP",
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            fixedSize: Size(170, 100),
-                            primary: Colors.greenAccent,
-                            onPrimary: Colors.green[900],
-                            elevation: 10,
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed("/home");
-                          },
+                    ElevatedButton(
+                      child: const Text(
+                        '次へ',
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: 40,
+                          fontFamily: "Noto Sans JP",
                         ),
-                        ElevatedButton(
-                          child: const Text(
-                            '次へ',
-                            style: TextStyle(
-                              color: Colors.black45,
-                              fontSize: 40,
-                              fontFamily: "Noto Sans JP",
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            fixedSize: Size(170, 100),
-                            primary: Colors.greenAccent,
-                            onPrimary: Colors.green[900],
-                            elevation: 10,
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed("/question");
-                          },
-                        ),
-                      ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(170, 100),
+                        primary: Colors.greenAccent,
+                        onPrimary: Colors.green[900],
+                        elevation: 10,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/question");
+                      },
                     ),
-                  ),
-                ]),
-          ),
-        ));
+                  ],
+                ),
+              ),
+            ]),
+      ),
+    );
   }
 }
