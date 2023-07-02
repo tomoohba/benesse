@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                 ],
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                 ],
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
@@ -207,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                   ElevatedButton(
@@ -220,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ButtonStyle(
                       fixedSize: MaterialStateProperty.all(
-                          Size(200, 70)), // 幅: 200, 高さ: 70
+                          Size(100, 70)), // 幅: 100, 高さ: 70
                     ),
                   ),
                 ],
@@ -241,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 25),
                     ),
                     style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(Size(300, 70)),
+                      fixedSize: MaterialStateProperty.all(Size(200, 70)),
                       backgroundColor: MaterialStateProperty.all(
                           Colors.red), // ボタンの背景色を青に設定 // 幅: 200, 高さ: 70
                     ),
