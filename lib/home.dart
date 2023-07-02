@@ -13,15 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Benesse'),
@@ -32,15 +23,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -48,33 +30,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      // appBar: AppBar(
-      //   // Here we take the value from the MyHomePage object that was created by
-      //   // the App.build method, and use it to set our appbar title.
-      //   title: Text(widget.title),
-      // ),
       body: Column(
         children: [
           Container(
@@ -90,28 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   alignment: Alignment.center,
                   child: const Text(
-                    '科目を選択してください。',
+                    '科目を選択してください',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                     ),
                   ),
                 ),
-                // Container(
-                //   alignment: Alignment.bottomCenter,
-                //   child: const Text('ここに問題文が入ります',
-                //     style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20,),
-                //   ),
-                // ),
               ],
             ),
           ),
-          // const Text(
-          //   '科目を選択してください。',
-          //   style: TextStyle(
-          //     fontSize: 30,
-          //   ),
-          // ),
           Expanded(
             child: Center(
               child: Row(
@@ -121,14 +67,42 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       // ボタンが押された時の処理
                     },
+                    // child:
+                    // Stack(
+                    //   children: [
+                    //     Text(
+                    //       '英語',
+                    //       style: TextStyle(
+                    //         fontWeight: FontWeight.bold,
+                    //         fontSize: 25,
+                    //         foreground: Paint()
+                    //           ..style = PaintingStyle.stroke
+                    //           ..strokeWidth = 2
+                    //           ..color = Colors.black,
+                    //       ),
+                    //     ),
+                    //     Text(
+                    //       '英語',
+                    //       style: TextStyle(
+                    //         fontWeight: FontWeight.bold,
+                    //         fontSize: 25,
+                    //         color: Colors.white,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     child: Text(
                       '英語',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(
+                          color: Colors.white,
+                          // fontWeight: FontWeight.bold,
+                          fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.orange[500],
+                      onPrimary: Colors.orange[900],
                     ),
                   ),
                   ElevatedButton(
@@ -137,12 +111,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '数学',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.blue[500],
+                      onPrimary: Colors.blue[900],
                     ),
                   ),
                   ElevatedButton(
@@ -151,12 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '国語',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.red[500],
+                      onPrimary: Colors.red[900],
                     ),
                   ),
                 ],
@@ -174,12 +150,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '物理',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.purple[500],
+                      onPrimary: Colors.purple[900],
                     ),
                   ),
                   ElevatedButton(
@@ -188,12 +165,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '化学',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.pink[500],
+                      onPrimary: Colors.pink[900],
                     ),
                   ),
                   ElevatedButton(
@@ -202,12 +180,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '生物',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.teal[500],
+                      onPrimary: Colors.teal[900],
                     ),
                   ),
                 ],
@@ -225,11 +204,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '地理',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
+                      elevation: 10,
+                      primary: Colors.green[500],
                       onPrimary: Colors.green[900],
                     ),
                   ),
@@ -239,12 +219,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '日本史',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.deepOrange[500],
+                      onPrimary: Colors.deepOrange[900],
                     ),
                   ),
                   ElevatedButton(
@@ -253,12 +234,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '世界史',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
-                      primary: Colors.greenAccent,
-                      onPrimary: Colors.green[900],
+                      elevation: 10,
+                      primary: Colors.brown[500],
+                      onPrimary: Colors.brown[900],
                     ),
                   ),
                 ],
@@ -280,6 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(200, 70),
+                      elevation: 10,
                       primary: Colors.redAccent,
                       onPrimary: Colors.red[900],
                     ),
@@ -290,11 +273,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
