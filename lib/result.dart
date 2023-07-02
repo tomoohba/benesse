@@ -48,18 +48,50 @@ class _ResultPageState extends State<ResultPage> {
                           fontFamily: "Noto Sans JP",
                         )),
                     for (int i = 0; i < difflist.length; i++)
-                      Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "Noto Sans JP",
-                          )),
+                      Container(
+                        height: 40.0,
+                        width: 280,
+                        decoration: BoxDecoration(
+                            color: Colors.blue[300],
+                            borderRadius: BorderRadius.circular(20.0),
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 20.0,
+                                color: Colors.blue.withOpacity(0.5),
+                                offset: Offset(10, 15),
+                              ),
+                            ]),
+                        child: Center(
+                          child: Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "Noto Sans JP",
+                              )),
+                        ),
+                      ),
                     for (int i = 0; i < difflist.length; i++)
                       if (difflist[i] >= MyApp.qmain.threshold)
-                        Text(MyApp.eng.unitdesc[i],
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontSize: 20,
-                              fontFamily: "Noto Sans JP",
+                        Container(
+                            height: 40.0,
+                            width: 280,
+                            decoration: BoxDecoration(
+                                color: Colors.blue[300],
+                                borderRadius: BorderRadius.circular(20.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 20.0,
+                                    color: Colors.blue.withOpacity(0.5),
+                                    offset: Offset(10, 15),
+                                  ),
+                                ]),
+                            child: Center(
+                              child: Text(MyApp.eng.unitdesc[i],
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontFamily: "Noto Sans JP",
+                                  )),
                             )),
                   ],
                 ),
