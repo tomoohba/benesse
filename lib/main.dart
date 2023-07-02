@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        fontFamily: "Noto Sans JP",
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -96,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              "A quick fox jumps over hogehoge",
             ),
             Text(
               '$_counter',
