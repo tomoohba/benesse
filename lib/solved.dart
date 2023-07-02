@@ -44,6 +44,7 @@ class _SolvedPageState extends State<SolvedPage> {
 
     MyApp.qmain.incQnum();
     MyApp.qmain.setChoice(0);
+    qnum++;
 
     return Scaffold(
       appBar: AppBar(
@@ -65,14 +66,14 @@ class _SolvedPageState extends State<SolvedPage> {
                 children: <Widget>[
                   Container(
                     alignment: Alignment.topCenter,
-                    child: Text('問題',
+                    child: Text('問題'+ '$qnum',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                   ),
                   Container(
                     alignment: Alignment.bottomCenter,
                     child:  Text(qtxt,
-                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.normal,fontSize: 20),
+                      style: TextStyle(fontFamily: 'Noto Sans JP', fontWeight: FontWeight.normal,fontSize: 20),
                     ),
                   ),
                 ],
@@ -140,7 +141,7 @@ class _SolvedPageState extends State<SolvedPage> {
 
                       elevation: 10,
                     ),
-                    child: Text('次へ', style: TextStyle(fontFamily: 'Noto Sans JP',color: Colors.white),
+                    child: Text('次へ', style: TextStyle(fontFamily: 'Noto Sans JP', color: Colors.white),
                     ),
                   ),
                 ),
