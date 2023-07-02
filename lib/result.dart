@@ -34,6 +34,10 @@ class _ResultPageState extends State<ResultPage> {
           fontFamily: "Noto Sans JP",
         ),
         home: Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            title: Text("Result"),
+          ),
           body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

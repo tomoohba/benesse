@@ -11,14 +11,7 @@ class SolvedPage extends StatefulWidget {
 }
 
 class _SolvedPageState extends State<SolvedPage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   String qtxt = MyApp.eng.qlist[MyApp.qmain.qnum];
   List<String> chlist =  MyApp.eng.chlist[MyApp.qmain.qnum];
@@ -52,51 +45,113 @@ class _SolvedPageState extends State<SolvedPage> {
     MyApp.qmain.incQnum();
     MyApp.qmain.setChoice(0);
 
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("answer"),
+        automaticallyImplyLeading : false,
+
+        title: Text("Answer"),
       ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: Column(
           children: <Widget>[
-            Text(
-              qtxt,
-            ),
-            Text(
-              "答え: " + ans,
-            ),
-            Text(
-              "あなたの回答: "+ selected,
-            ),
-            Text(
-              description,
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.green, width: 5),
               ),
-              onPressed: () {Navigator.of(context).pushNamed(nextpath);},
-              child: const Text('次へ'),
+              width: 400,
+              height: 200,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.topCenter,
+                    child: Text('問題',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    child:  Text(qtxt,
+                      style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+              //
             ),
+            Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    color: Colors.greenAccent,
+                    width: 400,
+                    child: Text('正答　　　　：' + ans,
+                      style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    color: Colors.greenAccent,
+                    width: 400,
+                    child: Text('あなたの解答：' + selected,
+                      style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.green, width: 5),
+              ),
+              width: 400,
+              height: 150,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.topCenter,
+                    child:const Text('解説',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(description,
+                      style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children:[
+                SizedBox(
+                  width: 100,
+                  child: ElevatedButton(
+                    onPressed: () {Navigator.of(context).pushNamed(nextpath);},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                      onPrimary: Colors.red[900],
+
+                      elevation: 10,
+                    ),
+                    child: Text('次へ', style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+
+            ),
+
+
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      );
+
   }
 }

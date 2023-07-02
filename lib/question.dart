@@ -12,15 +12,6 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  int _counter = 0;
-  
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-      //MyApp.qmain.setAnswer("fire");
-    });
-  }
   void setone(){
     MyApp.qmain.setChoice(1);
   }
@@ -34,16 +25,6 @@ class _QuestionPageState extends State<QuestionPage> {
     MyApp.qmain.setChoice(4);
   }
 
-  // int cannot = 0; //苦手度合い
-  // int threshold = 6; //苦手閾値、この値を超えると苦手認定
-  // int difficulty = 1; // スキップ5点,簡単5点,普通3点,難しい1点, 
-  // bool isnotgood = false;
-  // void cannotsolve(){
-  //   cannot = cannot + difficulty;
-  //   if(cannot > threshold){
-  //     isnotgood = true;
-  //   }
-  // }
   String qtxt = MyApp.eng.qlist[MyApp.qmain.qnum];
   List<String> chlist =  MyApp.eng.chlist[MyApp.qmain.qnum];
   
@@ -51,13 +32,9 @@ class _QuestionPageState extends State<QuestionPage> {
   @override
   Widget build(BuildContext context) {
     int qnum  = MyApp.qmain.qnum + 1;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.green),
-       home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        automaticallyImplyLeading : false,
         title: Text("Question"),
       ),
         body: Column(
@@ -86,7 +63,6 @@ class _QuestionPageState extends State<QuestionPage> {
                   ),
                 ],
               ),
-              //
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -97,9 +73,10 @@ class _QuestionPageState extends State<QuestionPage> {
                     onPressed:  () {Navigator.of(context).pushNamed("/solved");},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
+                      onPrimary: Colors.red[900],
                       elevation: 10,
                     ),
-                    child: Text('決定'),
+                    child: Text('決定', style: TextStyle(color: Colors.white)),
                   ),
                 ),
                 SizedBox(
@@ -108,14 +85,16 @@ class _QuestionPageState extends State<QuestionPage> {
                     onPressed: () {Navigator.of(context).pushNamed("/solved");},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange,
+                      onPrimary: Colors.orange[900],
                       elevation: 10,
                     ),
-                    child: Text('スキップ'),
+                    child: Text('スキップ', style: TextStyle(color: Colors.white)),
                   ),
                 ),
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 SizedBox(
                   width: 300,
@@ -123,6 +102,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     onPressed: setone,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                       elevation: 10,
                     ),
                     child: Text(chlist[1]),
@@ -134,6 +114,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     onPressed: settwo,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                       elevation: 10,
                     ),
                     child: Text(chlist[2]),
@@ -145,6 +126,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     onPressed: setthree,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                       elevation: 10,
                     ),
                     child: Text(chlist[3]),
@@ -156,6 +138,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     onPressed: setfour,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                       elevation: 10,
                     ),
                     child: Text(chlist[4]),
@@ -166,88 +149,6 @@ class _QuestionPageState extends State<QuestionPage> {
             ),
           ],
         ),
-      ),
-      // appBar: AppBar(
-
-      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
- 
-      //   title: Text("Answer"),
-      // ),
-      // body: Center(
-
-      //   child: Column(
-
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: <Widget>[
-      //       Text(
-      //         qtxt,
-      //       ),
-      //       Text(
-      //         '$_counter',
-      //         style: Theme.of(context).textTheme.headlineMedium,
-      //       ),
-      //       ElevatedButton(
-      //         style: ElevatedButton.styleFrom(
-      //           shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(10),
-      //           ),
-      //         ),
-      //         onPressed: () {Navigator.of(context).pushNamed("/solved");},
-      //         child: const Text('決定'),
-      //       ),
-      //       ElevatedButton(
-      //         style: ElevatedButton.styleFrom(
-      //           shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(10),
-      //           ),
-      //         ),
-      //         onPressed: () {Navigator.of(context).pushNamed("/solved");},
-      //         child: const Text('スキップ'),
-      //       ),
-      //       ElevatedButton(
-      //         style: ElevatedButton.styleFrom(
-      //           shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(10),
-      //           ),
-      //         ),
-      //         onPressed: setone,
-      //         child:  Text(chlist[1]),
-      //       ),
-      //       ElevatedButton(
-      //         style: ElevatedButton.styleFrom(
-      //           shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(10),
-      //           ),
-      //         ),
-      //         onPressed: settwo,
-      //         child:  Text(chlist[2]),
-      //       ),
-      //       ElevatedButton(
-      //         style: ElevatedButton.styleFrom(
-      //           shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(10),
-      //           ),
-      //         ),
-      //         onPressed: setthree,
-      //         child:  Text(chlist[3]),
-      //       ),
-      //       ElevatedButton(
-      //         style: ElevatedButton.styleFrom(
-      //           shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(10),
-      //           ),
-      //         ),
-      //         onPressed: setfour,
-      //         child:  Text(chlist[4]),
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      );
   }
 }

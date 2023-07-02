@@ -5,15 +5,6 @@ import 'package:flutter/material.dart';
 class NotGoodAtPage extends StatefulWidget {
   const NotGoodAtPage({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
 
   @override
   State<NotGoodAtPage> createState() => _NotGoodAtPageState();
@@ -27,13 +18,29 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
 
      return Scaffold(
       appBar: AppBar(
-        title: const Text('苦手度を表示'),
+        title: const Text('ニガテ'),
       ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.green, width: 5),
+              ),
+              alignment: Alignment.center,
+              //adding: const EdgeInsets.all(20),
+              child: const Text(
+                '苦手を表示',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             SizedBox(height: 20),
             Expanded(
               child: Row(
@@ -42,12 +49,15 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: Colors.red,
+                      color: Colors.orange[500],
                       padding: const EdgeInsets.all(10),
                       child: const Text(
-                        '教科：□％',
+                        '英語 30％',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+
                         ),
                       ),
                     ),
@@ -55,12 +65,29 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                   SizedBox(width: 20),
                   Expanded(
                     child: Container(
-                      color: Colors.blue,
+                      color: Colors.blue[500],
                       padding: const EdgeInsets.all(10),
                       child: const Text(
-                        '教科：□％',
+                        '数学 15％',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: Container(
+                      color: Colors.red[500],
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
+                        '国語 5％',
+                        style: TextStyle(
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -76,12 +103,14 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: Colors.green,
+                     color: Colors.purple[500],
                       padding: const EdgeInsets.all(10),
                       child: const Text(
-                        '教科：□％',
+                        '物理 0％',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -89,12 +118,29 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                   SizedBox(width: 20),
                   Expanded(
                     child: Container(
-                      color: Colors.orange,
+                      color:  Colors.pink[500],
                       padding: const EdgeInsets.all(10),
                       child: const Text(
-                        '教科：□％',
+                        '化学 40％',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: Container(
+                      color: Colors.teal[500],
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
+                        '生物 20％',
+                        style: TextStyle(
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -110,12 +156,14 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: Colors.yellow,
+                      color:Colors.green[500],
                       padding: const EdgeInsets.all(10),
                       child: const Text(
-                        '教科：□％',
+                        '地理 40％',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -123,12 +171,29 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                   SizedBox(width: 20),
                   Expanded(
                     child: Container(
-                      color: Colors.purple,
+                      color: Colors.deepOrange[500],
                       padding: const EdgeInsets.all(10),
                       child: const Text(
-                        '教科：□％',
+                        '日本史 40％',
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: Container(
+                      color: Colors.brown[500],
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
+                        '世界史 10％',
+                        style: TextStyle(
+                          fontSize: 27,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -137,10 +202,23 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
               ),
             ),
             SizedBox(height: 20),
-            OutlinedButton(
-              onPressed: () {},
-              child: const Text('スタート画面に戻る'),
+            ElevatedButton(
+              child: const Text(
+                'ホーム',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size(160, 100),
+                elevation: 10,
+                primary: Colors.greenAccent,
+                onPrimary: Colors.green[900],
+              ),
+              onPressed: () {Navigator.of(context).pushNamed("/home");},
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),
