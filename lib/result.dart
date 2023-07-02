@@ -21,18 +21,7 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
 
   @override
@@ -41,64 +30,112 @@ class _ResultPageState extends State<ResultPage> {
     int qsize = MyApp.qmain.qsize;
     List<int> difflist = MyApp.qmain.difficult;
     List<int> diffsum = MyApp.qmain.diffsum;
-    double difficulty = difflist[0] / diffsum[0] * 100;
-    int diff1 = difficulty.toInt();
-    difficulty = difflist[1] / diffsum[1] * 100;
-    int diff2 = difficulty.toInt();
-    difficulty = difflist[2] / diffsum[2] * 100;
-    int diff3 = difficulty.toInt();
-    String unit1 = MyApp.eng.unitname[0];
-    String unit2 = MyApp.eng.unitname[1];
-    String unit3 = MyApp.eng.unitname[2];
+    double difficulty;
+    List<int> diff= [0, 0, 0];
+    List<String> unit = ["", "", ""];
+    for(int i = 0; i < difflist.length; i++){
+      difficulty = difflist[i] / diffsum[i] * 100;
+      diff[i] = difficulty.toInt();
+      unit[i] = MyApp.eng.unitname[i];
+    }
+    MyApp.qmain.init();
 
-
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text("result"),
-      ),
       body: Center(
         child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "結果： " + '$cor' + "/" + '$qsize',
-            ),
-            Text(
-              unit1 + "ニガテ度： " + '$diff1' + "%",
-            ),
-            Text(
-              unit2 + "ニガテ度： " + '$diff2' + "%",
-            ),
-            Text(
-              unit3 + "ニガテ度： " + '$diff3' + "%",
-            ),
-            for(int i = 0; i < difflist.length; i++)
-              if(difflist[i] >= MyApp.qmain.threshold) Text(MyApp.eng.unitdesc[i]),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Container>[
+              Container(
+                height: 300.0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    const Text("今回の点数",
+                        style: TextStyle(fontSize: 35, fontFamily: 'MSゴシック')),
+                    Text(
+                      '$cor' + "/" + '$qsize',
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                    Text(
+                      "結果： " + '$cor' + "/" + '$qsize',
+                    ),
+                    for(int i = 0; i < difflist.length; i++)
+                      Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",),
+                    for(int i = 0; i < difflist.length; i++)
+                      if(difflist[i] >= MyApp.qmain.threshold) Text(MyApp.eng.unitdesc[i]), //ニガテの抽出
+                  ],
+                ),
+              ),
+              Container(
+                height: 300.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    ElevatedButton(
+                      child: const Text(
+                        'HOME',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(170, 100),
+                        primary: Colors.grey[300],
+                        onPrimary: Colors.purple,
+                      ),
+                      onPressed: () {Navigator.of(context).pushNamed("/home");},
+                    ),
+                    ElevatedButton(
+                      child: const Text(
+                        'NEXT',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(170, 100),
+                        primary: Colors.grey[300],
+                        onPrimary: Colors.purple,
+                      ),
+                      onPressed: () {Navigator.of(context).pushNamed("/question");},
+                    ),
+                  ],
+                ),
+              ),
+            ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+
+
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+    //     title: Text("result"),
+    //   ),
+    //   body: Center(
+    //     child: Column(
+          
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       children: <Widget>[
+    //         Text(
+    //           "結果： " + '$cor' + "/" + '$qsize',
+    //         ),
+    //         Text(
+    //           unit1 + "ニガテ度： " + '$diff1' + "%",
+    //         ),
+    //         Text(
+    //           unit2 + "ニガテ度： " + '$diff2' + "%",
+    //         ),
+    //         Text(
+    //           unit3 + "ニガテ度： " + '$diff3' + "%",
+    //         ),
+    //         for(int i = 0; i < difflist.length; i++)
+    //           if(difflist[i] >= MyApp.qmain.threshold) Text(MyApp.eng.unitdesc[i]),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }

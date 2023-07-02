@@ -30,4 +30,11 @@ class Questions {
     difficult[unit] += diff;
     diffsum[unit] += diff;
   }
+
+  void init(){
+    qnum = 0;
+    correct = 0;
+    difficult = [0, 0, 0];
+    diffsum = [0, 0, 0];
+  }
 }
