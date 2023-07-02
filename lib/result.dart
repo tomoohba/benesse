@@ -1,80 +1,32 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const ResultHome(),
-    );
-  }
-}
-
-class ResultHome extends StatelessWidget {
-  const ResultHome({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Benesse',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ResultPage(),
-    );
-  }
-}
+import 'main.dart';
+import 'questions.dart';
 
 class ResultPage extends StatefulWidget {
-  const ResultPage({
-    super.key,
-  });
+  const ResultPage({super.key});
+
   @override
   State<ResultPage> createState() => _ResultPageState();
 }
 
 class _ResultPageState extends State<ResultPage> {
-  int _grade = 0;
-  int _selectedIndex = 0;
-
-  // void _pushHomePage() async {
-  //   Navigator.push(
-  //       context,
-  //       MaterialPageRoute(
-  //           settings: RouteSettings(name: "/home"),
-  //           builder: (BuildContext context) => (HomePage())));
-  // }
-
-  void _ontapedbottom(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    int cor = MyApp.qmain.correct;
+    int qsize = MyApp.qmain.qsize;
+    List<int> difflist = MyApp.qmain.difficult;
+    List<int> diffsum = MyApp.qmain.diffsum;
+    double difficulty;
+    List<int> diff = [0, 0, 0];
+    List<String> unit = ["", "", ""];
+    for (int i = 0; i < difflist.length; i++) {
+      difficulty = difflist[i] / diffsum[i] * 100;
+      diff[i] = difficulty.toInt();
+      unit[i] = MyApp.eng.unitname[i];
+    }
+    MyApp.qmain.init();
+
     return Scaffold(
-      //backgroundColor: Colors.green[100],
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,14 +36,22 @@ class _ResultPageState extends State<ResultPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    const Text('今回の点数',
-                        style: TextStyle(
-                            fontSize: 50, fontFamily: 'Noto Sans JP')),
+                    const Text("今回の点数",
+                        style: TextStyle(fontSize: 35, fontFamily: 'MSゴシック')),
                     Text(
-                      '$_grade/10',
-                      style:
-                          TextStyle(fontSize: 50, fontFamily: 'Noto Sans JP'),
+                      '$cor' + "/" + '$qsize',
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
+                    Text(
+                      "結果： " + '$cor' + "/" + '$qsize',
+                    ),
+                    for (int i = 0; i < difflist.length; i++)
+                      Text(
+                        unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
+                      ),
+                    for (int i = 0; i < difflist.length; i++)
+                      if (difflist[i] >= MyApp.qmain.threshold)
+                        Text(MyApp.eng.unitdesc[i]),
                   ],
                 ),
               ),
@@ -114,7 +74,9 @@ class _ResultPageState extends State<ResultPage> {
                         primary: Colors.greenAccent,
                         onPrimary: Colors.green[900],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/home");
+                      },
                     ),
                     ElevatedButton(
                       child: const Text(
@@ -130,7 +92,9 @@ class _ResultPageState extends State<ResultPage> {
                         primary: Colors.greenAccent,
                         onPrimary: Colors.green[900],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/question");
+                      },
                     ),
                   ],
                 ),
