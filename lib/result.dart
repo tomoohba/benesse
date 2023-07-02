@@ -29,26 +29,22 @@ class _ResultPageState extends State<ResultPage> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(primarySwatch: Colors.green),
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+          fontFamily: "Noto Sans JP",
+        ),
         home: Scaffold(
           body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Container>[
                   Container(
-                    // decoration: BoxDecoration(
-                    //   border: Border.all(color: Colors.green, width: 5),
-                    // ),
-                    color: Colors.orange[100],
                     height: 450.0,
-                    width: 300,
+                    width: 400,
                     child: Container(
-                      // decoration: BoxDecoration(
-                      //   border: Border.all(color: Colors.green, width: 5),
-                      // ),
-                      color: Colors.orange[100],
-                      height: 430.0,
-                      width: 280,
+                      //color: Colors.orange[100],
+                      height: 400.0,
+                      width: 350,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -56,6 +52,7 @@ class _ResultPageState extends State<ResultPage> {
                           Text('$cor' + "/" + '$qsize',
                               style: TextStyle(
                                 fontSize: 40,
+                                fontFamily: "Noto Sans JP",
                               )),
                           Text("結果： " + '$cor' + "/" + '$qsize',
                               style: TextStyle(
@@ -65,6 +62,7 @@ class _ResultPageState extends State<ResultPage> {
                             Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
                                 style: TextStyle(
                                   fontSize: 20,
+                                  fontFamily: "Noto Sans JP",
                                 )),
                           for (int i = 0; i < difflist.length; i++)
                             if (difflist[i] >= MyApp.qmain.threshold)
@@ -72,6 +70,7 @@ class _ResultPageState extends State<ResultPage> {
                                   style: TextStyle(
                                     color: Colors.red,
                                     fontSize: 20,
+                                    fontFamily: "Noto Sans JP",
                                   )),
                         ],
                       ),
@@ -88,13 +87,7 @@ class _ResultPageState extends State<ResultPage> {
                             style: TextStyle(
                               color: Colors.black45,
                               fontSize: 40,
-                              // shadows: <Shadow>[
-                              //   Shadow(
-                              //     color: Colors.white,
-                              //     offset: Offset(5.0, 5.0),
-                              //     blurRadius: 15.0,
-                              //   )
-                              // ]
+                              fontFamily: "Noto Sans JP",
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
@@ -111,8 +104,9 @@ class _ResultPageState extends State<ResultPage> {
                           child: const Text(
                             '次へ',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black45,
                               fontSize: 40,
+                              fontFamily: "Noto Sans JP",
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
@@ -130,45 +124,6 @@ class _ResultPageState extends State<ResultPage> {
                   ),
                 ]),
           ),
-          // bottomNavigationBar: BottomNavigationBar(
-          //   currentIndex: _selectedIndex,
-          //   items: const <BottomNavigationBarItem>[
-          //     BottomNavigationBarItem(
-          //       icon: Icon(
-          //         Icons.next_plan,
-          //         color: Colors.black,
-          //       ),
-          //       label: "NEXT",
-          //       //backgroundColor: Colors.blue,
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.keyboard_return, color: Colors.black),
-          //       label: "HOME",
-          //       //backgroundColor: Colors.red,
-          //     ),
-          //   ],
-
-          //   onTap: _ontapedbottom,
-          //   type: BottomNavigationBarType.fixed,
-          //   // ここで色を設定していても、shiftingにしているので
-          //   // Itemの方のbackgroundColorが勝ちます。
-          //   //backgroundColor: Colors.red,
-          //   enableFeedback: true,
-          //   // IconTheme系統の値が優先されます。
-          //   iconSize: 18,
-          //   // 横向きレイアウトは省略します。
-          //   // landscapeLayout: 省略
-          //   selectedFontSize: 20,
-          //   selectedIconTheme: const IconThemeData(size: 30, color: Colors.green),
-          //   selectedLabelStyle: const TextStyle(color: Colors.red),
-          //   // ちなみに、LabelStyleとItemColorの両方を選択した場合、ItemColorが勝ちます。
-          //   selectedItemColor: Colors.black,
-          //   unselectedFontSize: 20,
-          //   unselectedIconTheme: const IconThemeData(size: 25, color: Colors.white),
-          //   unselectedLabelStyle: const TextStyle(color: Colors.black),
-          //   // IconTheme系統の値が優先されるのでこの値は適応されません。
-          //   //unselectedItemColor: Colors.red,
-          // ),
         ));
   }
 }
