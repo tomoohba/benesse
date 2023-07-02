@@ -51,8 +51,10 @@ class _QuestionPageState extends State<QuestionPage> {
                 children: <Widget>[
                   Container(
                     alignment: Alignment.topCenter,
-                    child: Text('問題' + '$qnum' + ".",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,),
+                    child: Text('問題' + '$qnum',
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        fontWeight: FontWeight.bold, fontSize: 30,),
                     ),
                   ),
                   Container(
@@ -76,7 +78,7 @@ class _QuestionPageState extends State<QuestionPage> {
                       onPrimary: Colors.red[900],
                       elevation: 10,
                     ),
-                    child: Text('決定', style: TextStyle(color: Colors.white)),
+                    child: Text('決定', style: TextStyle(fontFamily: 'Noto Sans JP',color: Colors.white)),
                   ),
                 ),
                 SizedBox(
@@ -88,7 +90,7 @@ class _QuestionPageState extends State<QuestionPage> {
                       onPrimary: Colors.orange[900],
                       elevation: 10,
                     ),
-                    child: Text('スキップ', style: TextStyle(color: Colors.white)),
+                    child: Text('スキップ', style: TextStyle(fontFamily: 'Noto Sans JP',color: Colors.white)),
                   ),
                 ),
               ],

@@ -66,13 +66,13 @@ class _SolvedPageState extends State<SolvedPage> {
                   Container(
                     alignment: Alignment.topCenter,
                     child: Text('問題',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                   ),
                   Container(
                     alignment: Alignment.bottomCenter,
                     child:  Text(qtxt,
-                      style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.normal,fontSize: 20),
                     ),
                   ),
                 ],
@@ -88,7 +88,7 @@ class _SolvedPageState extends State<SolvedPage> {
                     color: Colors.greenAccent,
                     width: 400,
                     child: Text('正答　　　　：' + ans,
-                      style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.normal, fontSize: 20),
                     ),
                   ),
                   Container(
@@ -97,7 +97,7 @@ class _SolvedPageState extends State<SolvedPage> {
                     color: Colors.greenAccent,
                     width: 400,
                     child: Text('あなたの解答：' + selected,
-                      style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.normal,fontSize: 20),
                     ),
                   ),
                 ],
@@ -116,13 +116,13 @@ class _SolvedPageState extends State<SolvedPage> {
                   Container(
                     alignment: Alignment.topCenter,
                     child:const Text('解説',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                   ),
                   Container(
                     alignment: Alignment.bottomCenter,
                     child: Text(description,
-                      style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+                      style: TextStyle(fontFamily: 'Noto Sans JP',fontWeight: FontWeight.normal,fontSize: 20),
                     ),
                   ),
                 ],
@@ -140,7 +140,7 @@ class _SolvedPageState extends State<SolvedPage> {
 
                       elevation: 10,
                     ),
-                    child: Text('次へ', style: TextStyle(color: Colors.white),
+                    child: Text('次へ', style: TextStyle(fontFamily: 'Noto Sans JP',color: Colors.white),
                     ),
                   ),
                 ),

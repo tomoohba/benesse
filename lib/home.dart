@@ -65,6 +65,7 @@ class _HomePageState extends State<HomePage> {
                     child: Text(
                       '英語',
                       style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
                           color: Colors.white,
                           // fontWeight: FontWeight.bold,
                           fontSize: 22),
@@ -82,7 +83,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '数学',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -97,7 +100,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '国語',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -121,7 +126,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '物理',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -136,7 +143,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '化学',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -151,7 +160,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '生物',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -175,7 +186,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '地理',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -190,7 +203,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '日本史',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -205,7 +220,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '世界史',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                        color: Colors.white, fontSize: 22),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(100, 70),
@@ -230,7 +247,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text(
                       '苦手',
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                      style: TextStyle(
+                        fontFamily: 'Noto Sans JP',
+                      color: Colors.white, fontSize: 25),
                     ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(200, 70),
