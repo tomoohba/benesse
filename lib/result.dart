@@ -23,6 +23,7 @@ class _ResultPageState extends State<ResultPage> {
       difficulty = difflist[i] / diffsum[i] * 100;
       diff[i] = difficulty.toInt();
       unit[i] = MyApp.eng.unitname[i];
+      MyApp.eng.setScore(i, diff[i]);
     }
     MyApp.qmain.init();
 

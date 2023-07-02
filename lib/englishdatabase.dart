@@ -30,4 +30,10 @@ class EnglishDataBase {
     "形容詞が苦手です"
   ];
 
+  List<int> notGoodAtScore = [0, 0, 0];
+
+  void setScore(int i, int diff){
+    notGoodAtScore[i] = diff;
+  }
+
 }

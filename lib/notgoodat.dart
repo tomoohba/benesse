@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'main.dart';
 
 
 class NotGoodAtPage extends StatefulWidget {
@@ -15,6 +15,12 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
 
   @override
   Widget build(BuildContext context) {
+    int sum = 0;
+    List<int> nl = MyApp.eng.notGoodAtScore;
+    for(int i = 0; i < 3; i++){
+      sum += nl[i];
+    }
+    sum = (sum/3).toInt();
 
      return Scaffold(
       appBar: AppBar(
@@ -51,8 +57,8 @@ class _NotGoodAtPageState extends State<NotGoodAtPage> {
                     child: Container(
                       color: Colors.orange[500],
                       padding: const EdgeInsets.all(10),
-                      child: const Text(
-                        '英語 30％',
+                      child: Text(
+                        '英語 '+ '$sum' + "%",
                         style: TextStyle(
                           fontSize: 27,
                           color: Colors.white,
