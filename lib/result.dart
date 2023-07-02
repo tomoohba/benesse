@@ -73,7 +73,7 @@ class _ResultPageState extends State<ResultPage> {
                       child: const Text(
                         'ホーム',
                         style: TextStyle(
-                          color: Colors.black45,
+                          color: Colors.white,
                           fontSize: 40,
                           fontFamily: "Noto Sans JP",
                         ),
@@ -92,7 +92,7 @@ class _ResultPageState extends State<ResultPage> {
                       child: const Text(
                         '次へ',
                         style: TextStyle(
-                          color: Colors.black45,
+                          color: Colors.white,
                           fontSize: 40,
                           fontFamily: "Noto Sans JP",
                         ),
