@@ -70,19 +70,48 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
+      // appBar: AppBar(
+      //   // Here we take the value from the MyHomePage object that was created by
+      //   // the App.build method, and use it to set our appbar title.
+      //   title: Text(widget.title),
+      // ),
       body: Column(
         children: [
-          const Text(
-            '科目を選択してください。',
-            style: TextStyle(
-              fontSize: 30,
+          Container(
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.green, width: 5),
+            ),
+            width: 400,
+            height: 75,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  alignment: Alignment.center,
+                  child: const Text(
+                    '科目を選択してください。',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+                // Container(
+                //   alignment: Alignment.bottomCenter,
+                //   child: const Text('ここに問題文が入ります',
+                //     style: TextStyle(fontWeight: FontWeight.normal,fontSize: 20,),
+                //   ),
+                // ),
+              ],
             ),
           ),
+          // const Text(
+          //   '科目を選択してください。',
+          //   style: TextStyle(
+          //     fontSize: 30,
+          //   ),
+          // ),
           Expanded(
             child: Center(
               child: Row(
@@ -94,11 +123,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '英語',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                   ElevatedButton(
@@ -107,11 +137,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '数学',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                   ElevatedButton(
@@ -120,11 +151,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '国語',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                 ],
@@ -142,11 +174,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '物理',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                   ElevatedButton(
@@ -155,11 +188,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '化学',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                   ElevatedButton(
@@ -168,11 +202,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '生物',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                 ],
@@ -190,11 +225,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '地理',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                   ElevatedButton(
@@ -203,11 +239,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '日本史',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                   ElevatedButton(
@@ -216,11 +253,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '世界史',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(
-                          Size(100, 70)), // 幅: 100, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(100, 70),
+                      primary: Colors.greenAccent,
+                      onPrimary: Colors.green[900],
                     ),
                   ),
                 ],
@@ -238,12 +276,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       '苦手',
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(color: Colors.white, fontSize: 25),
                     ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(Size(200, 70)),
-                      backgroundColor: MaterialStateProperty.all(
-                          Colors.red), // ボタンの背景色を青に設定 // 幅: 200, 高さ: 70
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(200, 70),
+                      primary: Colors.redAccent,
+                      onPrimary: Colors.red[900],
                     ),
                   ),
                 ],
