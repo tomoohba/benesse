@@ -1,47 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const ResultPage());
-}
-
-class ResultPage extends StatelessWidget {
-  const ResultPage({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Benesse',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ResultHome(title: 'benesse Edtech'),
-    );
-  }
-}
-
-class ResultHome extends StatefulWidget {
-  const ResultHome({super.key, required this.title});
+class ResultPage extends StatefulWidget {
+  const ResultPage({super.key, required this.title});
   final String title;
   @override
-  State<ResultHome> createState() => _ResultHomeState();
+  State<ResultPage> createState() => _ResultPageState();
 }
 
-class _ResultHomeState extends State<ResultHome> {
+class _ResultPageState extends State<ResultPage> {
   int _grade = 0;
   int _selectedIndex = 0;
 
-  //void _pushHomePage() async {
-  //  /////////
-  //  await Navigator.of(context).push(
-  //    MaterialPageRoute(
-  //      builder: (context) {
-  //        return ; ///////遷移先のクラス
-  //      },
-  //    ),
-  //  );
-  //  setState(() {});
-  //}
+  void _pushHomePage() async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            settings: RouteSettings(name: "/home"),
+            builder: (BuildContext context) => (HomePage())));
+  }
+
   void _ontapedbottom(int index) {
     setState(() {
       _selectedIndex = index;
@@ -87,7 +64,7 @@ class _ResultHomeState extends State<ResultHome> {
                         primary: Colors.grey[300],
                         onPrimary: Colors.purple,
                       ),
-                      onPressed: () {},
+                      onPressed: _pushHomePage,
                     ),
                     ElevatedButton(
                       child: const Text(
