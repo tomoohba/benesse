@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'englishdatabase.dart';
 import 'questions.dart';
 
 
@@ -36,6 +37,7 @@ class _ResultPageState extends State<ResultPage> {
     for(int i = 0; i < difflist.length; i++){
       difficulty = difflist[i] / diffsum[i] * 100;
       diff[i] = difficulty.toInt();
+      EnglishDataBase.notGoodAtScore[i] = diff[i];
       unit[i] = MyApp.eng.unitname[i];
     }
     MyApp.qmain.init();

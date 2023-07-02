@@ -29,5 +29,5 @@ class EnglishDataBase {
     "動詞が苦手です",
     "形容詞が苦手です"
   ];
-
+  static List<int> notGoodAtScore = [0, 0, 0];
 }
