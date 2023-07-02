@@ -36,36 +36,45 @@ class _ResultPageState extends State<ResultPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Container>[
                   Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.green, width: 5),
-                    ),
+                    // decoration: BoxDecoration(
+                    //   border: Border.all(color: Colors.green, width: 5),
+                    // ),
+                    color: Colors.orange[100],
                     height: 450.0,
                     width: 300,
-                    //color: Colors.orange[200],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        const Text("今回の点数",
-                            style: TextStyle(
-                                fontSize: 35, fontFamily: 'Noto Sans JP')),
-                        Text('$cor' + "/" + '$qsize',
-                            style: TextStyle(
-                                fontSize: 40, fontFamily: 'Noto Sans JP')),
-                        Text("結果： " + '$cor' + "/" + '$qsize',
-                            style: TextStyle(
-                                fontSize: 20, fontFamily: 'Noto Sans JP')),
-                        for (int i = 0; i < difflist.length; i++)
-                          Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
+                    child: Container(
+                      // decoration: BoxDecoration(
+                      //   border: Border.all(color: Colors.green, width: 5),
+                      // ),
+                      color: Colors.orange[100],
+                      height: 430.0,
+                      width: 280,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          const Text("今回の点数", style: TextStyle(fontSize: 35)),
+                          Text('$cor' + "/" + '$qsize',
                               style: TextStyle(
-                                  fontSize: 20, fontFamily: 'Noto Sans JP')),
-                        for (int i = 0; i < difflist.length; i++)
-                          if (difflist[i] >= MyApp.qmain.threshold)
-                            Text(MyApp.eng.unitdesc[i],
+                                fontSize: 40,
+                              )),
+                          Text("結果： " + '$cor' + "/" + '$qsize',
+                              style: TextStyle(
+                                fontSize: 20,
+                              )),
+                          for (int i = 0; i < difflist.length; i++)
+                            Text(unit[i] + "ニガテ度： " + '${diff[i]}' + "%",
                                 style: TextStyle(
+                                  fontSize: 20,
+                                )),
+                          for (int i = 0; i < difflist.length; i++)
+                            if (difflist[i] >= MyApp.qmain.threshold)
+                              Text(MyApp.eng.unitdesc[i],
+                                  style: TextStyle(
                                     color: Colors.red,
                                     fontSize: 20,
-                                    fontFamily: 'Noto Sans JP')),
-                      ],
+                                  )),
+                        ],
+                      ),
                     ),
                   ),
                   Container(
@@ -79,7 +88,6 @@ class _ResultPageState extends State<ResultPage> {
                             style: TextStyle(
                               color: Colors.black45,
                               fontSize: 40,
-                              fontFamily: "Noto Sans JP",
                               // shadows: <Shadow>[
                               //   Shadow(
                               //     color: Colors.white,
@@ -105,7 +113,6 @@ class _ResultPageState extends State<ResultPage> {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 40,
-                              fontFamily: "Noto Sans JP",
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
