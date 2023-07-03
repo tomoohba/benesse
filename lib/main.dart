@@ -46,6 +46,7 @@ class MyApp extends StatelessWidget {
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         //primarySwatch: Colors.blue,
         primarySwatch: Colors.green,
+        fontFamily: 'Noto Sans JP',
         //useMaterial3: true,
 
       ),
